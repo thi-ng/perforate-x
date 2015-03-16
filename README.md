@@ -7,6 +7,14 @@ using [perforate](https://github.com/davidsantiago/perforate) for
 Clojure and the [npm benchmark](https://github.com/RyanMcG/lein-npm)
 module for Clojurescript.
 
+Currently not all features of Perforate are supported:
+
+* no goal options
+* `defcase` arglists are (still) ignored
+* `defcase` expects a thunk for benchmarking (as shown below, though for
+  Clojure the fn will be unpacked)
+* CLJS version does **not** use macros
+  
 ## Leiningen coordinates
 
 Add this to your `:dev-dependencies` in `project.clj`:
