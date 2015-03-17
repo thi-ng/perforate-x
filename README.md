@@ -34,7 +34,7 @@ And this your `:plugins`:
 ```clj
 (ns mybench.core
   (:require
-   [perforate-x.core :refer :all]))
+   [perforate-x.core :as perf :refer [defgoal defcase]]))
 
 (defgoal :math-goal "dummy benchmark")
 
@@ -43,7 +43,7 @@ And this your `:plugins`:
 (defcase :math-goal :madd [] #(+ (* 1 2) 3))
 
 ;; the following is for CLJS only!
-(run-goals)
+(perf/run-goals)
 ```
 
 *Note:* By default Perforate expects benchmark namespaces in the
